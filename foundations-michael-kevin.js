@@ -9,7 +9,7 @@ const multiply3 = (array) => {
     return newArr
 }
 
-console.log(multiply3(testArr1)); //[ 9, 27, 45, 12, 30 ]
+//console.log(multiply3(testArr1)); //[ 9, 27, 45, 12, 30 ]
 // output: [9, 27, 45, 12, 30]
 //Write a function that takes in an array of numbers and returns a new array with only odd numbers.
 
@@ -18,13 +18,13 @@ const newArray = (array) =>{
    let newArray = []
    for (let i= 0; i < array.length; i ++){
     if (array[i] % 2 !== 0){
-        console.log(array[i])
+        newArray.push(array[i])
     }
-    return newArray
-   }
+    }
+   return newArray
 }
 
-console.log(newArray(testArr2));
+console.log(newArray(testArr2));[ -7, 3, 5, 13 ]
 // output: [-7, 3, 5, 13]
 //Write a function that takes in an array of numbers and letters and returns a string with only the letters. HINT: use the typeof method.
 const comboArr = [
