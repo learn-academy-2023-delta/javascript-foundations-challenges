@@ -37,12 +37,48 @@ console.log(stringOddSplitter(pumbaa));
 // output: ["a", "wonderful", "ain't", "passing", "craze"]
 // Create a function that takes in an array of numbers and letters and returns a string with only the letters. HINT: Use the typeof operator.
 const comboArr = [7, "n", "i", "c", 10, "e", false, "w", 3, "o", "r", "k"]
+const letterString = (array) => { 
+return array.filter(value => typeof value === "string").join('')
+}
+console.log(letterString(comboArr));
 // output: "nicework"
 // Create a function that takes in an array and returns an array without any false, null, 0, or blank values.
 const filterArrayValues = [58, "", "abcd", true, null, false, 0]
+const truthy = (arr) => {
+return arr.filter(value => value === false)//|| value !== 0 || value !== )
+}
+if (!null){
+  console.log("its falsey");
+}
+console.log(truthy(filterArrayValues));
 // output: [58, "abcd", true]
 // Create a function that takes in an array of strings and returns an array of strings with every other letter capitalized.
 const makesWackyWords = ["simba", "nala", "zazu", "rafiki"]
+let even = (x) => { x % 2 === 0 }
+const capitalizeStrings = (arr) => {
+return arr.map( (value, index, arr)  => {
+console.log(index)
+ if(even(value[index])) {
+  console.log("x")
+   return value[index].toUpperCase()
+ }} )
+
+}
+console.log(capitalizeStrings(makesWackyWords));
+const capitalizeStringsTwo = (arr) => {
+  return arr.map(value => {
+    let tempValue = value.split('')
+    for(let i = 0 ; i < tempValue.length ; i++ ){
+      if (i %2 == 0) { 
+     
+        tempValue[i] = tempValue[i].toUpperCase()
+      }
+    }
+    return tempValue.join('')
+    
+  })
+}
+console.log(capitalizeStringsTwo(makesWackyWords));
 // output: ["sImBa", "nAlA", "zAzU", "rAfIkI"]
 // Create a function that takes in a string and returns a new string with all the vowels removed.
 const str = "javascript is awesome"
