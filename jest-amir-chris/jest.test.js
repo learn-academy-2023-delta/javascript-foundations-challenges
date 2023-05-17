@@ -62,14 +62,57 @@ const number = (num1, num2) => {
 
 // Write the test for a function that takes in one numbers and returns whether the number is odd.
 
+describe("isOdd", () => {
+  it("returns odd if number is odd", () => {
+    expect(isOdd(num)).toEqual("number is odd")
+  })
+})
+
+
 // Create the function that will make the test pass.
+let num = 3
+const isOdd = (input) =>  {
+  if(input % 2 !== 0){
+    return "number is odd"
+
+  }
+}
 
 // Write the test for a function that takes in a fruit and returns "yellow" if the argument is banana, "red" if apple and "purple" if grape.
 
+describe("fruit", () => {
+  it("returns yellow if banana red if apple purple if grape", () => {
+    expect(fruit("banana")).toEqual("yellow")
+    expect(fruit("apple")).toEqual("red")
+    expect(fruit("grape")).toEqual("purple")
+  })
+  })
+
 // Create the function that will make the test pass.
 
+const fruit = (input) => {
+  return input === "banana" ? "yellow"
+  : input === "apple" ? "red"
+  : input === "grape" ? "purple"
+  : "sorry" ;
+}
+ 
 // Write the test for a function called rick that returns "Morty".
+
+describe("pickle", () => {
+it("returns morty", () => {
+expect(pickle()).toEqual("Morty")
+})
+
+}) 
+
+
+
 // Create the function that will make the test pass.
+
+const pickle = () => {
+  return "Morty"
+}
 // Write the test for a function called greeter that takes a name as an argument and returns a greeting with that name to the screen.
 // Create the function that will make the test pass.
 // Write the test for a function called oddOrEven that takes a number as an argument and logs whether the number is odd or even.
