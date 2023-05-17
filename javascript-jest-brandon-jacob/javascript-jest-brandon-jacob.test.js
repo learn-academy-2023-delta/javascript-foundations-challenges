@@ -131,15 +131,125 @@ const fruit = (fruitType) => {
 
 // Write the test for a function called rick that returns "Morty".
 // Create the function that will make the test pass.
+describe("rick", () => {
+    it("returns Morty.", () => {
+        expect(rick()).toEqual("Morty")
+        
+    })
+})
+
+const rick = () => "Morty"
+
+
 // Write the test for a function called greeter that takes a name as an argument and returns a greeting with that name to the screen.
 // Create the function that will make the test pass.
+
+
+describe("greeter", () => {
+    it("returns a hello string with the persons name.", () => {
+        expect(greeter("Stan")).toEqual("Hello Stan")
+        
+    })
+})
+
+const greeter = (name) => {
+    return `Hello ${name}`
+
+}
 // Write the test for a function called oddOrEven that takes a number as an argument and logs whether the number is odd or even.
+describe("oddOrEven", () => {
+    it("tests if a number is even or odd", () => {
+        expect(oddOrEven(2)).toEqual("Even")
+        expect(oddOrEven(3)).toEqual("Odd")
+        
+    })
+})
+
+const oddOrEven = (num) => {
+    if (num % 2 === 0) {
+        return "Even"
+    } else  if (num % 2 !== 0) {
+        return "Odd"
+    }
+
+}
+
+
 // Create the function that will make the test pass.
 // Write the test for a function called doubler that takes a number and returns the result of the number multiplied by 2.
+
+describe("doubler", () => {
+    it("doubles a number", () => {
+        expect(doubler(2)).toEqual(4)
+        
+        
+    })
+})
+
+const doubler = (num) => num*2
+    
+
 // Create the function that will make the test pass.
 // Write the test for a function called multiply that takes two numbers as arguments and logs the result of one of the numbers multiplied by the other.
+
+describe("multiply", () => {
+    it("multiplies two numbers", () => {
+        expect(multiply(2, 4)).toEqual(8)
+        
+        
+    })
+})
+
+const multiply = (num1, num2 ) => num1*num2
+   
+
+
 // Create the function that will make the test pass.
 // Write the test for a function called divisibleBy that takes two numbers as arguments and returns whether the first number is evenly divisible by the second so that divisibleBy(10, 5) logs "10 is evenly divisible by 5".
+describe("divisibleBy", () => {
+    it("tests if a number is divisible by its friend", () => {
+        expect(divisibleBy(10, 5)).toEqual("10 is evenly divisible by 5")
+        
+        
+    })
+})
+
+const divisibleBy = (num1, num2) => {
+    if (num1 % num2 === 0) {
+        return `${num1} is evenly divisible by ${num2}`
+    } else  {
+        return "the numbers are not evenly divisible"
+    }
+    }
+
+
+
+
 // Create the function that will make the test pass.
 // Write the test for a function called fizzbuzz. If a number is a multiple of 3, replace it with the word "fizz". If a number is a multiple of five, replace it with the word "buzz". If a number is a multiple of both 3 and 5, replace it with "fizzbuzz".
+describe("fizzbuzz", () => {
+    it("tests if a number is a multiple of stuff", () => {
+        expect(fizzbuzz(10)).toEqual("buzz")
+        expect(fizzbuzz(3)).toEqual("fizz")
+        expect(fizzbuzz(30)).toEqual("fizzbuzz")
+        expect(fizzbuzz(4)).toEqual(4)
+        
+        
+    })
+})
+
+const fizzbuzz = (num1) => {
+    if (num1 % 3 === 0 && num1 % 5 === 0) {
+        return "fizzbuzz"
+    }else if(num1 % 3 === 0){
+        return "fizz"
+    }else if (num1 % 5 === 0){
+        return "buzz"
+    }else return num1
+
+}
+
+
+
+
 // Create the function that will make the test pass.
