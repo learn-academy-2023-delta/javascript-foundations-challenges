@@ -53,17 +53,25 @@ if (!null){
 console.log(truthy(filterArrayValues));
 // output: [58, "abcd", true]
 // Create a function that takes in an array of strings and returns an array of strings with every other letter capitalized.
-const makesWackyWords = ["simba", "nala", "zazu", "rafiki"]
-let even = (x) => { x % 2 === 0 }
-const capitalizeStrings = (arr) => {
-return arr.map( (value, index, arr)  => {
-console.log(index)
- if(even(value[index])) {
-  console.log("x")
-   return value[index].toUpperCase()
- }} )
-
+// const makesWackyWords = ["simba", "nala", "zazu", "rafiki"]
+// let even = (x) => { x % 2 === 0 }
+// const capitalizeStrings = (arr) => {
+// return arr.map( (value, index, arr)  => {
+// console.log(index)
+//  if(even(value[index])) {
+//   console.log("x")
+//    return value[index].toUpperCase()
+//  }} )
+// }
+const goingThroughWords = (arrOfWords) => {
+  return arrOfWords.map(word => goingThroughLetters(word.split('')).join(''));
 }
+
+const goingThroughLetters = (arrOfLetters) => {
+    return arrOfLetters.map((letter, index) => 
+      index % 2 === 1 ? letter = letter.toUpperCase() : letter)
+}
+// *******************************
 console.log(capitalizeStrings(makesWackyWords));
 const capitalizeStringsTwo = (arr) => {
   return arr.map(value => {
