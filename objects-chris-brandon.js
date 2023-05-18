@@ -70,18 +70,53 @@ const animals = [
   { name: "Hank", type: "cat", age: 11 }
 ]
 // Create a function that takes in an array of animal objects and returns a new array with only the objects that are cats.
+
+const petFilter = (array) => {
+  return array.filter(value => value.type === "cat")
+}
+console.log(petFilter(animals))
+
 // Create a function that takes in an array of animal objects and returns a new array with only the names of the animals.
+
+const petMap = (array) => {
+  return array.map(value => value.name)
+}
+
+console.log(petMap(animals))
+
 // Create a function that takes in an array of animal objects and returns a new array of the names of the animals that are more than 10 years old.
+
+const age = (array) => {
+  let filtered = array.filter(value => value.age > 10)
+  return filtered.map(value => value.name)
+}
+
+console.log(age(animals))
+
 // Create a function that takes in an array of animal objects and returns a new array with a sentence about each animal.
+
+const sentence = (array) => {
+  let mapped = array.map(value => value.name + "is a fuzzy cute animal")
+  return mapped
+}
+
+console.log(sentence(animals))
+
 // Consider this variable:
 
 const author = {
   name: "H. G. Wells",
   genre: "science fiction"
 }
+
 // Write the code that destructures the author object so that the following code snippet will run successfully:
-// console.log(`${name} is a ${genre} author`)
+
+let [name, genre] = [author.name, author.genre]
+
+console.log(`${name} is a ${genre} author`)
+
 // // output: "H. G. Wells is a science fiction author"
+
 // Consider this variable:
 
 const pokeOne = {
@@ -94,16 +129,28 @@ const pokeTwo = {
   pokemon_type: "Water"
 }
 // Create a function called describePokemon that take an object like the ones above and uses destructuring to return a description of the Pokemon so that the following code snippet will run successfully:
-// console.log(describePokemon(pokeOne))
+
+const describePokemon = (array) => {
+  [species, pokemon_type] = [array.species, array.pokemon_type]
+  return `${species} is a ${pokemon_type} pokemon`
+}
+
+console.log(describePokemon(pokeOne))
 // // output: "Charmandar is a Fire pokemon"
-// console.log(describePokemon(pokeTwo))
+console.log(describePokemon(pokeTwo))
 // // output: "Magikarp is a Water pokemon"
 // Consider this variable:
 
 const triangleDimensions = {
   base: 2,
-  height: 5
+  height: 5,
+  addUp: function() {
+    return .5 * this.base * this.height
+  }
 }
+triangleDimensions.base = 6
+console.log(triangleDimensions.addUp())
+
 // Modify the triangleDimensions object to have a method that returns the area of the triangle.
 // Write the code that will update the base to be the value of 6.
 // 🏔 Stretch Goals
