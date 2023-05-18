@@ -107,3 +107,92 @@ const petText = (pets) => {
 }
 
 console.log(petText(animals))
+
+// Consider this variable:
+
+const author = {
+  name: "H. G. Wells",
+  genre: "science fiction"
+}
+// Write the code that destructures the author object so that the following code snippet will run successfully:
+
+let { name, genre} = author
+ console.log(`${name} is a ${genre} author`)
+console.log(name);
+console.log(author.name);
+// // output: "H. G. Wells is a science fiction author"
+// Consider this variable:
+
+const pokeOne = {
+  species: "Charmandar",
+  pokemon_type: "Fire"
+}
+
+const pokeTwo = {
+  species: "Magikarp",
+  pokemon_type: "Water"
+}
+// Create a function called describePokemon that take an object like the ones above and uses destructuring to return a description of the Pokemon so that the following code snippet will run successfully:
+
+const describePokemon = (object) => {
+    let { species, pokemon_type} = object
+
+    return `${species} is a ${pokemon_type} pokemon`
+}
+
+console.log(describePokemon(pokeOne))
+// // output: "Charmandar is a Fire pokemon"
+ console.log(describePokemon(pokeTwo))
+// // output: "Magikarp is a Water pokemon"
+// Consider this variable:
+
+const triangleDimensions = {
+  base: 2,
+  height: 5
+}
+
+
+
+
+// Modify the triangleDimensions object to have a method that returns the area of the triangle.
+triangleDimensions.areaFinder = function() {
+    return (this.base*this.height)/2
+ }
+ console.log(triangleDimensions);
+ console.log(triangleDimensions.areaFinder());
+// Write the code that will update the base to be the value of 6.
+triangleDimensions.base = 6
+console.log(triangleDimensions.areaFinder());
+// 🏔 Stretch Goals
+// Consider this variable:
+
+const learn = {
+  cohorts: {
+    2021: ["Alpha", "Bravo", "Charlie", "Delta", "Echo"],
+    2022: ["Alpha", "Bravo", "Charlie", "Delta", "Echo", "Foxtrot", "Golf"],
+    2023: ["Alpha", "Bravo", "Charlie", "Delta", "Echo", "Foxtrot", "Golf"]
+  }
+}
+// Write the code that logs the name of your cohort.
+
+console.log(learn.cohorts[2023][3]);
+let { 2021:c2021, 2022:c2022, 2023:c2023 } = learn.cohorts
+
+// Write the code that uses desstructuring to log the name of your cohort.
+
+console.log(c2023[3]);
+//const { cohorts[2021] : { 2022 } } = learn
+
+
+// Create a function that takes an object like the one above and returns an array with a string of every cohort name and year.
+
+const arrayizer = (object) => {
+    let array = []
+    for (let key in object.cohorts){
+    array = array.concat((object.cohorts[key].map(value => key + value)))
+    }
+    
+    return array
+}
+console.log(arrayizer(learn));
+// // output: ["2021 Alpha", "2021 Bravo", "2021 Charlie", "2021 Delta", "2021 Echo", "2022 Alpha", "2022 Bravo", "2022 Charlie", "2022 Delta", "2022 Echo", "2022 Foxtrot", "2022 Golf"]
