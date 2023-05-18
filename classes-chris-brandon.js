@@ -70,3 +70,21 @@ console.log(chrisLatte.showLatte());
 // Write a class that calculates the volume of a Cylinder: v = πr^2h (r is the radius and h is the height of the cylinder)
 // Write the code that rounds the volume of the cylinder to four decimal places
 // Write the code that creates three unique cylinder objects
+
+class Cylinder {
+  constructor(radius, height) {
+    // this.radius = radius
+    // this.height = height
+    this.volume = Math.PI * radius ** 2 * height
+  }
+  showRounded() {
+    return this.volume.toFixed(4)
+  }
+}
+canOfBeans = new Cylinder(5, 10)
+canOfBeans1 = new Cylinder(3, 29)
+canOfBeans2 = new Cylinder(24, 3)
+
+console.log(canOfBeans.showRounded())
+console.log(canOfBeans1.showRounded())
+console.log(canOfBeans2.showRounded())
