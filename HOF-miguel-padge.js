@@ -20,15 +20,17 @@ console.log(div3)// we got [ 7, 3, 5, 13, -9 ]
 // // output: [7, 3, 5, 13, -9]
 
 // Create a function that takes in a string of multiple words and returns an array with only the words that have an odd number of characters.
-const pumbaa = "Hakuna Matata what a wonderful phrase Hakuna Matata ain't no passing craze"
-let array = pumbaa.split(" ")
+// const pumbaa = "Hakuna Matata what a wonderful phrase Hakuna Matata ain't no passing craze"
 
-const oddStr = (str) => {
+const pumbaa =
+"Hakuna Matata what a wonderful phrase Hakuna Matata ain't no passing craze";
 
-
-}
-
-
+function getWordsWithOddLengths(str) {
+    return str.split(" ").filter(value => value.length % 2 !== 0);
+  }
+  
+  const result = getWordsWithOddLengths(pumbaa);
+  console.log(result); // we got [ 'a', 'wonderful', "ain't", 'passing', 'craze' ]
 
 // function getWordsWithOddLengths(str) {
 //     const words = str.split(" ")
@@ -38,7 +40,7 @@ const oddStr = (str) => {
 //       const word = words[i]
 //       if (word.length % 2 !== 0) {
 //         result.push(word)
-//       }
+//       }                                      //Same problem but using a for loop
 //     }
   
 //     return result
@@ -52,18 +54,53 @@ const oddStr = (str) => {
 //   // output: ["a", "wonderful", "ain't", "passing", "craze"]
 
 // Create a function that takes in an array of numbers and letters and returns a string with only the letters. HINT: Use the typeof operator.
-// const comboArr = [7, "n", "i", "c", 10, "e", false, "w", 3, "o", "r", "k"]
+const comboArr = [7, "n", "i", "c", 10, "e", false, "w", 3, "o", "r", "k"]
+
+     function letterStr(str) {
+        return str.filter(item => typeof item === "string").join("")// we got nicework
+  }
+// const result2 = letterStr(comboArr)
+console.log(letterStr(comboArr))
+
 
 // // output: "nicework"
 
 // Create a function that takes in an array and returns an array without any false, null, 0, or blank values.
-// const filterArrayValues = [58, "", "abcd", true, null, false, 0]
+const filterArrayValues = [58, "", "abcd", true, null, false, 0]
+
+ //we want true, 58, "abcd",
+
+ const filterFalsyValues = item => item.filter(Boolean)//.map(item => String(item))
+
+console.log(filterFalsyValues(filterArrayValues))
 
 // // output: [58, "abcd", true]
 
 // Create a function that takes in an array of strings and returns an array of strings with every other letter capitalized.
-// const makesWackyWords = ["simba", "nala", "zazu", "rafiki"]
+const makesWackyWords = ["simba", "nala", "zazu", "rafiki"]
 
+//create function 
+
+//check each index if odd 
+  //do modulo of index
+//if odd capitalize
+  //.toUpperCase
+
+//return array
+
+const everyOther = (arrayAgain) => {
+
+    wordArray = arrayAgain.map(word => word.split("") )
+    console.log(wordArray)
+
+//     // const name = (letter) => { for(let i = 0; i < letter.length; i++){
+//     //     if (i % 2 === 1){
+//     //      return   letter[i].toUpperCase()
+//     //     }
+//     // }
+//  }
+}
+console.log(everyOther(makesWackyWords))
 // // output: ["sImBa", "nAlA", "zAzU", "rAfIkI"]
 
 // Create a function that takes in a string and returns a new string with all the vowels removed.
